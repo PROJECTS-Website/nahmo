@@ -35,26 +35,6 @@ const Index = () => {
     };
   }, []);
 
-  // Add keyframes for the glint animation
-  useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes shine {
-        from {
-          left: -100%;
-        }
-        to {
-          left: 100%;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-    
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
-
   return (
     <div className="bg-purple-darkest min-h-screen">
       <CustomCursor />

@@ -122,7 +122,35 @@ export default {
 				'cursor-blink': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0' }
-				}
+				},
+				'shine': {
+					from: { left: '-100%' },
+					to: { left: '100%' }
+				},
+				'spotlight': {
+					'0%': {
+						opacity: '0.1',
+						transform: 'translate(-50%, -50%) scale(0.5)'
+					},
+					'50%': {
+						opacity: '0.3',
+						transform: 'translate(-30%, -30%) scale(1)'
+					},
+					'100%': {
+						opacity: '0.1',
+						transform: 'translate(-50%, -50%) scale(0.5)'
+					}
+				},
+				'pulse-slow': {
+					'0%, 100%': { 
+						opacity: '0.8',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						opacity: '1',
+						transform: 'scale(1.05)'
+					}
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -133,7 +161,9 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out forwards',
 				'slide-in': 'slide-in 0.4s ease-out forwards',
 				'border-glow': 'border-glow 2s infinite',
-				'cursor-blink': 'cursor-blink 1s infinite'
+				'cursor-blink': 'cursor-blink 1s infinite',
+				'spotlight': 'spotlight 15s ease infinite',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 			},
 			fontFamily: {
 				'space': ['"Space Grotesk"', 'sans-serif'],
@@ -142,8 +172,31 @@ export default {
 			},
 			backgroundImage: {
 				'purple-gradient': 'linear-gradient(135deg, #60519b, #1e202c)'
+			},
+			textShadow: {
+				'glow': '0 0 10px rgba(96, 81, 155, 0.5), 0 0 20px rgba(96, 81, 155, 0.3)',
+				'sm': '0 0 5px rgba(96, 81, 155, 0.3)'
+			},
+			boxShadow: {
+				'glow': '0 0 15px rgba(96, 81, 155, 0.5)'
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		function ({ addUtilities }) {
+			const newUtilities = {
+				'.text-shadow-glow': {
+					textShadow: '0 0 10px rgba(96, 81, 155, 0.5), 0 0 20px rgba(96, 81, 155, 0.3)'
+				},
+				'.text-shadow-sm': {
+					textShadow: '0 0 5px rgba(96, 81, 155, 0.3)'
+				},
+				'.shadow-glow': {
+					boxShadow: '0 0 15px rgba(96, 81, 155, 0.5)'
+				}
+			};
+			addUtilities(newUtilities);
+		}
+	],
 } satisfies Config;

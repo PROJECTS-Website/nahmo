@@ -1,6 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { Server, Gamepad } from 'lucide-react';
 
 const projectsData = [
   {
@@ -8,12 +9,14 @@ const projectsData = [
     description: "A Linux-based VPS hosting service providing reliable, high-performance virtual private servers. Focused on security, uptime, and excellent customer support.",
     link: "https://voidhost.pro/",
     buttonText: "Learn More",
+    icon: Server,
   },
   {
     title: "Void Nodes MC",
     description: "A Minecraft server network with multiple game modes and optimized performance. Featuring custom plugins, active community, and unique gameplay experiences.",
     link: "https://voidhost.pro/",
     buttonText: "View Network",
+    icon: Gamepad,
   },
 ];
 
@@ -47,8 +50,13 @@ const Projects = () => {
     <section 
       id="projects" 
       ref={sectionRef}
-      className="py-20 px-4 bg-gradient-to-b from-purple-darkest to-purple-dark/20"
+      className="py-20 px-4 bg-gradient-to-b from-purple-darkest to-purple-dark/20 relative"
     >
+      {/* Animated divider at the top */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden">
+        <div className="h-px bg-gradient-to-r from-transparent via-purple-primary to-transparent w-full animate-pulse"></div>
+      </div>
+      
       <div className="container mx-auto">
         <div 
           className={cn(
@@ -56,7 +64,7 @@ const Projects = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-space">My Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-space text-shadow-glow">My Projects</h2>
           <div className="w-20 h-1 bg-purple-primary mx-auto"></div>
         </div>
         
@@ -71,12 +79,17 @@ const Projects = () => {
                 isVisible && index === 1 ? "delay-400" : ""
               )}
             >
+              {/* Icon */}
+              <div className="absolute top-4 right-4 text-purple-primary opacity-30 group-hover:opacity-50 transition-opacity">
+                <project.icon size={32} strokeWidth={1} />
+              </div>
+              
               {/* Glowing background effect */}
               <div className="absolute inset-0 bg-purple-primary opacity-5 group-hover:opacity-10 transition-opacity duration-500"></div>
               <div className="absolute -inset-[1px] bg-gradient-to-r from-purple-primary to-purple-dark opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-lg"></div>
               
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-shadow-sm transition-all">{project.title}</h3>
                 <p className="text-gray-300 mb-6">{project.description}</p>
                 <a 
                   href={project.link}
@@ -92,6 +105,11 @@ const Projects = () => {
             </div>
           ))}
         </div>
+      </div>
+      
+      {/* Animated divider at the bottom */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+        <div className="h-px bg-gradient-to-r from-transparent via-purple-primary to-transparent w-full animate-pulse"></div>
       </div>
     </section>
   );
