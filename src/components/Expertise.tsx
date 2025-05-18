@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Server, Linux, Computer } from 'lucide-react';
+import { Server, Terminal, Database } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const expertiseData = [
@@ -12,12 +12,12 @@ const expertiseData = [
   {
     title: "Linux Administration",
     description: "Expert in managing Ubuntu, Debian, and other Linux distributions, with a focus on server optimization and maintenance.",
-    icon: Linux,
+    icon: Terminal,
   },
   {
     title: "Minecraft Server Development",
     description: "Building and optimizing Minecraft servers with custom plugins, configurations, and scaling solutions.",
-    icon: Computer,
+    icon: Database,
   },
 ];
 
