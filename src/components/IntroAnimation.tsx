@@ -34,12 +34,32 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold font-space text-white mb-2">
-                <span className="text-gradient glow-text">N</span>
-                <span className="text-gradient glow-text opacity-90 delay-75">a</span>
-                <span className="text-gradient glow-text opacity-80 delay-150">h</span>
-                <span className="text-gradient glow-text opacity-70 delay-225">m</span>
-                <span className="text-gradient glow-text opacity-60 delay-300">o</span>
+              <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold font-space mb-2">
+                <span className="neon-text" style={{
+                  color: "#b447ff", 
+                  textShadow: "0 0 5px #b447ff, 0 0 10px #b447ff, 0 0 20px #b447ff, 0 0 30px #8a2be2",
+                  animation: "pulsate 1.5s infinite alternate"
+                }}>N</span>
+                <span className="neon-text opacity-90 delay-75" style={{
+                  color: "#b447ff", 
+                  textShadow: "0 0 5px #b447ff, 0 0 10px #b447ff, 0 0 20px #b447ff, 0 0 30px #8a2be2",
+                  animation: "pulsate 1.5s infinite alternate"
+                }}>a</span>
+                <span className="neon-text opacity-80 delay-150" style={{
+                  color: "#b447ff", 
+                  textShadow: "0 0 5px #b447ff, 0 0 10px #b447ff, 0 0 20px #b447ff, 0 0 30px #8a2be2",
+                  animation: "pulsate 1.5s infinite alternate"
+                }}>h</span>
+                <span className="neon-text opacity-70 delay-225" style={{
+                  color: "#b447ff", 
+                  textShadow: "0 0 5px #b447ff, 0 0 10px #b447ff, 0 0 20px #b447ff, 0 0 30px #8a2be2",
+                  animation: "pulsate 1.5s infinite alternate"
+                }}>m</span>
+                <span className="neon-text opacity-60 delay-300" style={{
+                  color: "#b447ff", 
+                  textShadow: "0 0 5px #b447ff, 0 0 10px #b447ff, 0 0 20px #b447ff, 0 0 30px #8a2be2",
+                  animation: "pulsate 1.5s infinite alternate"
+                }}>o</span>
               </h1>
             </motion.div>
             
