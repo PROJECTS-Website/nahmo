@@ -148,12 +148,6 @@
   .delay-600 {
     animation-delay: 600ms;
   }
-
-  /* Neon text effect */
-  .neon-text {
-    position: relative;
-    display: inline-block;
-  }
 }
 
 /* Define the pulse animation */
@@ -165,16 +159,6 @@
   50% {
     opacity: 0.5;
     transform: scale(0.95);
-  }
-}
-
-/* Define the pulsate animation for neon effect */
-@keyframes pulsate {
-  0% {
-    text-shadow: 0 0 4px #b447ff, 0 0 8px #b447ff, 0 0 12px #b447ff, 0 0 16px #8a2be2, 0 0 20px #8a2be2;
-  }
-  100% {
-    text-shadow: 0 0 6px #b447ff, 0 0 12px #b447ff, 0 0 18px #b447ff, 0 0 22px #8a2be2, 0 0 28px #8a2be2, 0 0 36px #8a2be2;
   }
 }
 
